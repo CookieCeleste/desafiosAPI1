@@ -1,0 +1,9 @@
+import { adicionarRotas } from "./routes.js";
+
+import express from 'express';
+const api = express();
+api.use(express.json());
+
+adicionarRotas(api);
+
+api.listen(5010, () => console.log('API is running'));
