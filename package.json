@@ -1,0 +1,26 @@
+{
+  "name": "desafiosapi1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CookieCeleste/desafiosAPI1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/CookieCeleste/desafiosAPI1/issues"
+  },
+  "homepage": "https://github.com/CookieCeleste/desafiosAPI1#readme",
+  "dependencies": {
+    "expres": "^0.0.5",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.3"
+  }
+}
