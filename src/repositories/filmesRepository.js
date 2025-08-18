@@ -3,7 +3,7 @@ import { connection } from "../connection.js";
 export async function listarFilmes() {
     const comando = `
     SELECT *
-        FROM filmes_tb;
+    FROM   filmes_tb;
     `
 
     const [registros] = await connection.query(comando);
@@ -24,6 +24,38 @@ export async function inserirFilme(novoFilme) {
         novoFilme.duracao_minutos,
         novoFilme.diretor,
         novoFilme.avaliacao
-    ])
-    return info.insertId
+    ]);
+    return info.insertId;
+}
+
+export async function editarFilme(id, novosDados) {
+    const comando = `
+    UPDATE      filmes_tb
+        SET     titulo = ?,
+                ano_lancamento = ?,
+                genero = ?,
+                duracao_minutos = ?,
+                diretor = ?,
+                avaliacao = ?
+    WHERE       id = ?;
+    `
+
+    const [info] = await connection.query(comando, [
+        novosDados.titulo,
+        novosDados.ano_lancamento,
+        novosDados.genero,
+        novosDados.duracao_minutos,
+        novosDados.diretor,
+        novosDados.avaliacao,
+        id
+    ]);
+}
+
+export async function deletarFilme(id) {
+    const comando =`
+    DELETE FROM filmes_tb
+          WHERE id = ?;
+    `
+
+    const [info] = await connection.query(comando, [id]);
 }

@@ -1,4 +1,4 @@
-import * as repo from '../repositories/pizzariaRepositoy.js'
+import * as repo from '../repositories/pizzariaRepository.js'
 
 import { Router } from 'express';
 const endpoints = Router();
