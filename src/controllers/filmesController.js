@@ -27,7 +27,7 @@ endpoints.put('/filmes/:id', async (req,resp) => {
 endpoints.delete('/filmes/:id', async (req, resp) => {
     let id = Number(req.params.id);
     
-    await repo.deletarFilme();
+    await repo.deletarFilme(id);
     resp.send();
 })
 
