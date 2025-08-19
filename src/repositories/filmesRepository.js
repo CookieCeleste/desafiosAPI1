@@ -59,3 +59,25 @@ export async function deletarFilme(id) {
 
     const [info] = await connection.query(comando, [id]);
 }
+
+export async function filtrarPorId(id) {
+    const comando = `
+    SELECT * 
+        FROM filmes_tb
+    WHERE id = ?;
+    `
+
+    const [registros] = await connection.query(comando, [id]);
+    return registros;
+}
+
+export async function filtrarPorTitulo(titulo) {
+    const comando = `
+    SELECT *
+        FROM filmes_tb
+    WHERE titulo LIKE ?;
+    `
+
+    const [registros] = await connection.query(comando, ['%'+titulo+'%']);
+    return registros;
+}
